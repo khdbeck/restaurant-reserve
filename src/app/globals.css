@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;           /* #ffffff */
+    --foreground: 240 10% 3.9%;        /* #0a0a0a */
+    --card: 0 0% 100%;                 /* #ffffff */
+    --card-foreground: 240 10% 3.9%;   /* #0a0a0a */
+    --popover: 0 0% 100%;              /* #ffffff */
+    --popover-foreground: 240 10% 3.9%;/* #0a0a0a */
+
+    /* Brand */
+    --primary: 248 71% 25%;            /* #1e0479 (deep indigo) */
+    --primary-foreground: 0 0% 98%;    /* #fafafa */
+    --secondary: 240 4.8% 95.9%;       /* #f3f3f6 */
+    --secondary-foreground: 240 5.9% 10%; /* #18181b */
+
+    /* UI */
+    --muted: 240 4.8% 95.9%;           /* #f3f3f6 */
+    --muted-foreground: 240 3.8% 46.1%;/* #767680 */
+    --accent: 45 65% 52%;              /* #c29d4b (golden) */
+    --accent-foreground: 240 5.9% 10%; /* #18181b */
+    --destructive: 0 84.2% 60.2%;      /* #ef4444 */
+    --destructive-foreground: 0 0% 98%;/* #fafafa */
+    --border: 240 5.9% 90%;            /* #e4e4e7 */
+    --input: 240 5.9% 90%;             /* #e4e4e7 */
+    --ring: 248 71% 25%;               /* #1e0479 */
+    --radius: 0.5rem;
+
+    /* Custom Tablein palette */
+    --tablein-blue: 170 82.65% 13.8%;  /* #004d40 (teal-ish) */
+    --tablein-brown: 25 39% 40%;       /* #8d543f */
+    --tablein-gold: 45 65% 52%;        /* #c29d4b */
+    --tablein-light-gray: 240 33% 98%; /* #f8f8f9 */
+    --tablein-gray: 0 0% 60%;          /* #999999 */
+    --tablein-beige: 39 40% 74%;       /* #c1aa9d */
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;        /* #0a0a0a */
+    --foreground: 0 0% 98%;            /* #fafafa */
+    --card: 240 10% 3.9%;              /* #0a0a0a */
+    --card-foreground: 0 0% 98%;       /* #fafafa */
+    --popover: 240 10% 3.9%;           /* #0a0a0a */
+    --popover-foreground: 0 0% 98%;    /* #fafafa */
+
+    /* Brand dark mode */
+    --primary: 45 65% 52%;             /* #c29d4b */
+    --primary-foreground: 240 10% 3.9%;/* #0a0a0a */
+    --secondary: 240 3.7% 15.9%;       /* #262626 */
+    --secondary-foreground: 0 0% 98%;  /* #fafafa */
+
+    /* UI dark mode */
+    --muted: 240 3.7% 15.9%;           /* #262626 */
+    --muted-foreground: 240 5% 64.9%;  /* #a1a1aa */
+    --accent: 248 71% 35%;             /* #2d0bbf (lighter indigo) */
+    --accent-foreground: 0 0% 98%;     /* #fafafa */
+    --destructive: 0 62.8% 30.6%;      /* #7f1d1d */
+    --destructive-foreground: 0 0% 98%;/* #fafafa */
+    --border: 240 3.7% 15.9%;          /* #262626 */
+    --input: 240 3.7% 15.9%;           /* #262626 */
+    --ring: 45 65% 52%;                /* #c29d4b */
+
+    /* Custom palette dark mode */
+    --tablein-blue: 248 71% 35%;       /* #2d0bbf */
+    --tablein-brown: 25 39% 50%;       /* #a46953 */
+    --tablein-gold: 45 65% 60%;        /* #d4b362 */
+    --tablein-light-gray: 240 3.7% 15.9%; /* #262626 */
+    --tablein-gray: 0 0% 40%;          /* #666666 */
+    --tablein-beige: 39 40% 54%;       /* #9f8673 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .tablein-blue {
+    color: hsl(var(--tablein-blue));
+  }
+  .bg-tablein-blue {
+    background-color: hsl(var(--tablein-blue));
+  }
+  .tablein-gold {
+    color: hsl(var(--tablein-gold));
+  }
+  .bg-tablein-gold {
+    background-color: hsl(var(--tablein-gold));
+  }
+  .tablein-brown {
+    color: hsl(var(--tablein-brown));
+  }
+  .bg-tablein-brown {
+    background-color: hsl(var(--tablein-brown));
+  }
+}
