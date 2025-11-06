@@ -1,27 +1,14 @@
 import * as React from "react";
 
-/**
- * Table4Seater icon (round table + 4 chairs).
- * - Default: GREEN (available)
- * - If `taken` is true: switches to RED (occupied)
- *
- * Usage:
- *   <Table4SeaterGreen />                    // green
- *   <Table4SeaterGreen taken />              // red
- *   <Table4SeaterGreen width={36} height={36} />
- */
 type Props = React.SVGProps<SVGSVGElement> & {
     taken?: boolean;
 };
 
 const Table4SeaterGreen = React.forwardRef<SVGSVGElement, Props>(
-    ({ taken = false, width = 281, height = 284, ...props }, ref) => {
-        // Colors pulled from your Figma export:
-        // Green table top:  #20C200 ; Green chairs:  #00FF1E
-        // Red   table top:  #C20000 ; Red   chairs:  #FF0000
+    ({ taken = false, width = 281, height = 124, ...props }, ref) => {
         const tableTop = taken ? "#C20000" : "#20C200";
         const chairFill = taken ? "#FF0000" : "#00FF1E";
-        const chairEdge = "#000"; // stroke from Figma
+        const chairEdge = "#000";
 
         return (
             <svg
@@ -29,7 +16,7 @@ const Table4SeaterGreen = React.forwardRef<SVGSVGElement, Props>(
                 xmlns="http://www.w3.org/2000/svg"
                 width={width}
                 height={height}
-                viewBox="0 0 281 284"
+                viewBox="0 0 281 120"
                 fill="none"
                 aria-hidden="true"
                 {...props}

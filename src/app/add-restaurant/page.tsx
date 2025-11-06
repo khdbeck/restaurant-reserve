@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { RestaurantLayoutEditor }from "@/components/restaurant-layout-editor";
 import { Upload, MapPin, Phone, Globe, Check, Utensils } from "lucide-react";
 
 const addRestaurantSchema = z.object({
@@ -339,7 +339,7 @@ export default function AddRestaurantPage() {
                       <FormControl>
                         <div className="relative">
                           <Globe className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                          <Input placeholder="https://yourrestaurant.uz" className="pl-10" {...field} />
+                          <Input placeholder="https:/" className="pl-10" {...field} />
                         </div>
                       </FormControl>
                       <FormMessage />
@@ -401,6 +401,19 @@ export default function AddRestaurantPage() {
                 </div>
               </CardContent>
             </Card>
+              {/* Layout Editor */}
+              <Card>
+                  <CardHeader>
+                      <CardTitle>Restaurant Layout (Table Placement)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                          Click inside the layout area to add a new table. Drag tables to reposition them.
+                      </p>
+
+                      <RestaurantLayoutEditor />
+                  </CardContent>
+              </Card>
 
             <div className="flex justify-end">
               <Button

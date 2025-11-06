@@ -45,8 +45,10 @@ export interface Table {
   seats: number;
   type: 'round' | 'square' | 'rectangle';
   status: 'available' | 'occupied' | 'reserved';
+  category?: "table" | "toilet" | "stage" | "wall";
   features?: string[]; // e.g., 'window view', 'private', 'bar seating'
   lastUpdated?: Date; // For real-time updates
+  rotation?: number;
 }
 
 export interface Obstacle {

@@ -3,10 +3,10 @@
 import * as React from "react";
 import type { RestaurantLayout, Table } from "@/lib/types";
 
-// SVG icon components (each accepts { taken?: boolean } and SVG props)
 import Table2SeaterGreen from "@/components/table-icons/Table2SeaterGreen";
 import Table4SeaterGreen from "@/components/table-icons/Table4SeaterGreen";
 import Table6SeaterGreen from "@/components/table-icons/Table6SeaterGreen";
+import Table8SeaterGreen from "@/components/table-icons/Table8SeaterGreen";
 
 type TableSelectionProps = {
     layout: RestaurantLayout;
@@ -29,6 +29,8 @@ function iconFor(table: Table) {
             return Table4SeaterGreen;
         case 6:
             return Table6SeaterGreen;
+        case 7:
+            return Table8SeaterGreen;
         default:
             return null;
     }
