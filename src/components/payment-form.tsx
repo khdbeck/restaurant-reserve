@@ -19,7 +19,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { CreditCard, Lock, Shield } from "lucide-react";
 import { useNotifications } from "@/components/notification-provider";
-import type { Restaurant } from "@/lib/types";
+import type { Restaurant, PreOrder } from "@/lib/types";
 import { format } from "date-fns";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_test_demo');
@@ -27,10 +27,11 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY 
 interface PaymentFormProps {
   restaurant: Restaurant;
   bookingDetails: {
-    date: Date; // changed from string to Date
+    date: Date;
     time: string;
     guests: number;
-    selectedTableId:string,
+    selectedTableId?: string;
+    preOrders?: PreOrder[];
     customerName: string;
     customerEmail: string;
   };

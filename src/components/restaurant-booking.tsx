@@ -557,7 +557,8 @@ export function RestaurantBooking({ restaurant }: RestaurantBookingProps) {
                   selectedTableId,
                   preOrders,
                 }}
-                onPaymentSuccess={() => {}}
+                onSuccess={() => {}}
+                onError={() => {}}
               />
 
               <div className="flex justify-between">
